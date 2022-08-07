@@ -26,6 +26,11 @@ $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-3         - HOST D
 $ sudo su
 $ curl https://releases.rancher.com/install-docker/19.03.sh | sh
 $ usermod -aG docker ubuntu
+ou
+Inclua este códigos em Detalhes avançãdos em Dados do usuário (podendo incluir variaveis de ambiente também): 
+#!/bin/bash
+curl https://releases.rancher.com/install-docker/19.03.sh | sh
+usermod -aG docker ubuntu
 ```
 
 
