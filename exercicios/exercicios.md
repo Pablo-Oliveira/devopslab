@@ -17,6 +17,23 @@ https://github.com/jonathanbaraldi/devops
 	É preciso entrar em todas as máquinas e instalar o Docker.
 
 ```sh
+Fazendo acesso via terminal usando chave PEM:
+
+Para fazer acesso via ".pem" acesse a pasta onde você guardou o arquivo correspondente a estas máquinas.
+Abra um terminal nesta pasta e use os seguintes comandos:
+Localize o arquivo de chave privada (com o comando dir ou ls).
+A chave usada para executar esta instância aparece assim "<nome da chave>.pem"
+Execute este comando, se necessário, para garantir que sua chave não fique visível publicamente.
+ chmod 400 <nome da chave>.pem
+Conecte-se à sua instância usando sua IP público.
+ Ex de ip: 158.159.155.120
+ Ex de nome de chave pem: nome-da-chave.pem
+ 
+Com o seguinte código:
+ssh -i <nome da chave>.pem ubuntu@<seu IP público>
+
+Seu código deve ficar assim:
+ssh -i nome-da-chave.pem ubuntu@158.159.155.120
 
 $ ssh -i devops-ninja.pem ubuntu@<ip>  - RancherSerber - HOST A
 $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-1         - HOST B
